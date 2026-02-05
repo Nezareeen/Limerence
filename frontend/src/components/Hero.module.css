@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    /* Increased height for better visual centering */
+    text-align: center;
+    padding-top: 5vh;
+    width: 100%;
+}
+
+.logoHeading {
+    font-family: var(--font-heading);
+    color: #3b82f6;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    /* Use globalFadeIn which we will define in index.css to be safe, 
+       or define local keyframes and refer to them */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Ensure these keyframes exist if using local animation names */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    /* Stack lines vertically */
+    align-items: center;
+    color: #60a5fa;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1.1;
+    cursor: pointer;
+    width: 100%;
+}
+
+.lineWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.char {
+    white-space: pre;
+    opacity: 0;
+    display: inline-block;
+    transform: translate(-2px, 4px) scale(.9);
+    filter: blur(6px);
+    color: #60a5fa;
+}
+
+@media (max-width: 1024px) {
+    .textContainer {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .textContainer {
+        font-size: 2.5rem;
+    }
+
+    .logoHeading {
+        font-size: 1.5rem;
+    }
+}

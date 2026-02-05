@@ -1,0 +1,78 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #3b82f6;
+    cursor: pointer;
+    flex: 1;
+    /* Helps with centering the middle section if we use flex-1 on sides */
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    /* Takes up more space to center itself relative to the container if needed */
+}
+
+.linkItem {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.linkItem:hover {
+    color: #3b82f6;
+}
+
+.auth {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.loginBtn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    background: transparent;
+    color: #3b82f6;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.loginBtn:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+}

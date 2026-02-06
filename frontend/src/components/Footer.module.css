@@ -1,0 +1,118 @@
+.footer {
+    padding: 6rem 2rem 0;
+    /* Removed bottom padding */
+    background-color: transparent;
+    /* Assuming white or transparent background from image */
+    font-family: var(--font-body);
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 3rem;
+    color: #60a5fa;
+    /* Light blue similar to Hero text */
+    text-align: left;
+    margin-bottom: 4rem;
+    font-weight: 500;
+}
+
+.linksGrid {
+    display: flex;
+    justify-content: center;
+    /* Center the columns group */
+    gap: 8rem;
+    /* Large gap between columns */
+    margin-bottom: 8rem;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: left;
+}
+
+.columnTitle {
+    font-size: 1.2rem;
+    color: #3b82f6;
+    /* Primary blue */
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.link {
+    text-decoration: none;
+    color: #4b5563;
+    /* Gray text */
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: #3b82f6;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    width: 100%;
+}
+
+.largeLogo {
+    font-family: var(--font-heading);
+    color: #3b82f6;
+    font-size: 10rem;
+    /* Very large logo */
+    margin: 0;
+    line-height: 0.7;
+    /* Reduced line height to pull text down */
+    transform: translateY(0.1em);
+    /* Nudge it down to touch the very edge */
+}
+
+.legal {
+    display: flex;
+    gap: 2rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    /* Align text with bottom of logo visually */
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .linksGrid {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .column {
+        text-align: center;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .largeLogo {
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,96 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-family: var(--font-body);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heading {
+    color: #3b82f6;
+    /* Primary Blue */
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item {
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.item.active {
+    background-color: #3b82f6;
+    /* Blue background when active */
+    border-color: #3b82f6;
+}
+
+.questionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.question {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #3b82f6;
+    /* Blue text default */
+    text-align: left;
+    padding-right: 1rem;
+}
+
+.item.active .question {
+    color: #fff;
+    /* White text when active */
+}
+
+.icon {
+    color: #3b82f6;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.item.active .icon {
+    color: #fff;
+}
+
+.answerWrapper {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    background-color: #3b82f6;
+    /* Keep blue background for answer area in active state */
+}
+
+.item.active .answerWrapper {
+    opacity: 1;
+}
+
+.answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #fff;
+    /* White text for answer */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+}

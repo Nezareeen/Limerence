@@ -1,0 +1,136 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto 5rem;
+    /* Center horizontally and keep bottom margin */
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #4b5563;
+    text-align: center;
+    /* Center text as per design */
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.section.reverse {
+    /* Kept for potential future use or mobile stacking control, but removed direction reversal */
+    justify-content: space-between;
+}
+
+/* Specific adjustment: For the second section, we want it to look like the design where text is on left, image on right. 
+   flex-direction: row (default) is Image Left, Text Right. 
+   So .section (default) matches "For students" (Image Left).
+   .section.reverse needs Text Left, Image Right. 
+   Wait, my JSX has:
+   For Students: Image, Content. -> Standard Flex Row. Correct.
+   For Companies: Content, Image. -> Standard Flex Row. Correct.
+   So actually I don't need row-reverse if I structure JSX correctly.
+   Let's check JSX:
+   Student: Image, Content. Flex Row -> Image Left, Content Right. Correct.
+   Company: Content, Image. Flex Row -> Content Left, Image Right. Correct.
+   So I don't strictly need .reverse for direction, unless I want to enforce it for mobile/responsive.
+   But in the CSS above I added .reverse just in case I needed to swap logic. 
+   Actually, looking at the JSX:
+   <div className={`${styles.section} ${styles.reverse}`}>
+     <Content />
+     <Image />
+   </div>
+   If I have Content then Image, and Flex Row, it will be Content Left, Image Right.
+   So .reverse style isn't strictly needed for desktop, but might be useful if I want to align things differently.
+   However, the design shows the second image aligned to the right. 
+   Let's just keep standard flex behavior.
+*/
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .section.reverse {
+        flex-direction: column-reverse;
+        /* Put image on top on mobile? Or keep text top? */
+        /* Usually image top is better. 
+           If JSX is Content, Image. column -> Content top. 
+           column-reverse -> Image top. */
+        flex-direction: column-reverse;
+    }
+
+    .intro {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    /* Rounded corners as seen in image */
+    object-fit: cover;
+    /* aspect-ratio could be good here but let's rely on natural size or max-height */
+    max-height: 300px;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Align text for specific sections if needed */
+.section:not(.reverse) .content {
+    align-items: flex-end;
+    /* Text align right for "For students"? */
+    text-align: right;
+}
+
+.section.reverse .content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.heading {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.text {
+    font-size: 1.125rem;
+    color: #4b5563;
+    line-height: 1.6;
+    max-width: 400px;
+    /* Limit line length to match design */
+}

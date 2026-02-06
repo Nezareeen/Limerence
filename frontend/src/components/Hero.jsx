@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Hero.module.css';
 
-const Hero = ({ onAnimationComplete }) => {
+const Hero = ({ onAnimationComplete, animationsDone }) => {
     const line1 = "Where talent craves";
     const line2 = "opportunity";
     const charAnimationDuration = 0.5;
@@ -49,6 +49,12 @@ const Hero = ({ onAnimationComplete }) => {
             >
                 {renderLine(line1, 0)}
                 {renderLine(line2, line1.length)}
+            </div>
+
+            <div className={`${styles.ctaContainer} ${animationsDone ? styles.visible : styles.hidden}`}>
+                <button className={styles.ctaButton}>
+                    Get started
+                </button>
             </div>
         </div>
     );

@@ -1,0 +1,208 @@
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: var(--font-body);
+}
+
+.leftSide {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fff;
+    overflow-y: auto;
+    /* Allow scrolling for long forms */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.leftSide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.rightSide {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    /* Ensures image fills height */
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    color: #3b82f6;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.roleToggle {
+    display: flex;
+    background-color: #f3f4f6;
+    padding: 0.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.roleBtn {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #4b5563;
+    transition: all 0.2s;
+}
+
+.activeRole {
+    background-color: #fff;
+    color: #3b82f6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.submitBtn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.submitBtn:hover {
+    background-color: #2563eb;
+}
+
+.switchMode {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.link {
+    color: #3b82f6;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.overlayText {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    text-align: right;
+    color: #fff;
+    z-index: 10;
+}
+
+.overlayText h2 {
+    font-size: 5rem;
+    font-weight: 300;
+    /* Thin font */
+    line-height: 1.2;
+}
+
+.overlayLogo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: #fff;
+    z-index: 10;
+}
+
+.overlayLogo h1 {
+    font-family: var(--font-heading);
+    font-size: 11rem;
+    margin: 0;
+    line-height: 1;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .rightSide {
+        display: none;
+        /* Hide image on mobile for focus on form */
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}

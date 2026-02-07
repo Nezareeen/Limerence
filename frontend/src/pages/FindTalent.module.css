@@ -1,0 +1,140 @@
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.searchInput:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: var(--color-primary);
+}
+
+.filterSelect {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.studentsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.studentCard {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.studentCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.usernameHeader {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.skills {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skillTag {
+    font-size: 0.75rem;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+}
+
+.viewProfileBtn {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-text);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.viewProfileBtn:hover {
+    opacity: 0.9;
+}
+
+.noResults {
+    text-align: center;
+    color: #64748b;
+    padding: 3rem;
+    font-size: 1.1rem;
+}

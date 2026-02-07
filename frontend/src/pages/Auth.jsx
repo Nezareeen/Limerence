@@ -149,7 +149,17 @@ const Auth = () => {
 
             if (response.ok) {
                 localStorage.setItem('userInfo', JSON.stringify(data));
-                navigate('/'); // Redirect to Home
+
+                // Redirect based on role
+                const userRole = data.role || role;
+
+                if (userRole === 'student') {
+                    navigate('/dashboard');
+                } else if (userRole === 'company') {
+                    navigate('/company');
+                } else {
+                    navigate('/'); // Redirect to Home for others
+                }
             } else {
                 setError(data.message || 'Something went wrong');
             }

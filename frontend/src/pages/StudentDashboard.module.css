@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 280px;
+    /* Width of Sidebar */
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+.header {
+    margin-bottom: 2.5rem;
+}
+
+.welcomeTitle {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.welcomeSubtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mainContent {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        margin-left: 0;
+        padding-top: 5rem;
+        /* Make space for mobile menu toggle if added later */
+    }
+
+    /* Note: Sidebar mobile responsiveness would need a hamburger menu implementation */
+}
